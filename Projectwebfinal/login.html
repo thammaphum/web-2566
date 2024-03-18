@@ -1,0 +1,19 @@
+<template>
+  <div>
+    <button @click="loginWithGoogle">Login with Google</button>
+  </div>
+</template>
+
+<script>
+import firebase from 'firebase/app'
+import 'firebase/auth'
+
+export default {
+  methods: {
+    loginWithGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider()
+      firebase.auth().signInWithPopup(provider)
+    }
+  }
+}
+</script>
